@@ -3,6 +3,9 @@
 type handle
 (* Unique ID for a file that has been uploaded *)
 
+(* HACK: Exposing this is not ideal, but it's pretty convenient. It's critical that `read` is not exposed. *)
+val show_handle : show handle
+
 datatype claim_result =
          NotFound (* That file was either claimed by someone else or was uploaded too long ago and never claimed. *)
        | Found of { Filename : option string,

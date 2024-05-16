@@ -1,4 +1,5 @@
 type handle = int
+val show_handle = _
 
 sequence handles
 
