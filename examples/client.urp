@@ -1,4 +1,4 @@
-library $/ajaxUpload
+library ../src/ur
 rewrite url Client/*
 database dbname=test
 sql client.sql

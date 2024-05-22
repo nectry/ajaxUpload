@@ -6,7 +6,7 @@ table images : { Id : int, MimeType : string, Content : blob }
 fun choice b =
     widget <- source <xml/>;
     status <- source <xml/>;
-    
+
     return <xml><body>
       <button value="Create new widget"
               onclick={fn _ => au <- AjaxUpload.render {SubmitLabel = if b then None else Some "Upload it!",

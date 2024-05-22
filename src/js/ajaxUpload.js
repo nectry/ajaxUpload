@@ -12,26 +12,6 @@ function tweakFormCode(autoSubmit, iframeId, submitId) {
 
     subm.parentNode.target = iframeId;
 
-    if (subm.begin == undefined) {
-        subm.begin = subm.onblur;
-        subm.onblur = undefined;
-    }
-
-    subm.parentNode.onsubmit = function() {
-        subm.begin();
-        return true;
-    };
-
-    if (subm.withHandle == undefined) {
-        subm.withHandle = subm.onkeydown;
-        subm.onkeydown = undefined;
-    }
-
-    if (subm.withError == undefined) {
-        subm.withError = subm.onfocus;
-        subm.onfocus = undefined;
-    }
-
     if (autoSubmit) {
         subm.style.visibility = "hidden";
         for (var node = subm.previousSibling; node.tagName != "INPUT"; node = node.previousSibling);
@@ -51,8 +31,4 @@ function tweakForm(autoSubmit, iframeId, submitId) {
         + "\",\""
         + submitId
         + "\");</script>";
-}
-
-function idToString(x) {
-    return x;
 }
